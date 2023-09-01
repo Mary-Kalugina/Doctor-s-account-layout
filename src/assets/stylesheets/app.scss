@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'SF-Pro-Display';
+    src: url('../fonts/SF-Pro-Display-Black.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+body {
+font-family: 'SF-Pro-Display';
+background-color: #F1F2F3;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+ul, li {
+  list-style-type: none;
+  padding: 0;
+}

@@ -1,0 +1,17 @@
+$BLUE: #4198C5;
+$GRAY: #616F82;
+$BACKGROUND_GRAY: #F1F2F3;
+$BLACK: #161718;
+$WIGHT: #FFF;
+
+
+$dissolve-animation: dissolve 300ms ease-out;
+
+@keyframes dissolve {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

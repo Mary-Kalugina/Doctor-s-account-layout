@@ -1,0 +1,160 @@
+@import '../../assets/stylesheets/mixins.scss';
+@import '../../assets/stylesheets/constants.scss';
+
+.patient-account {
+    width: 744px;
+}
+
+.profile-header {
+    width: 100%;
+    height: 110px;
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 0;
+    padding: 10px;
+    border-radius: 4px;
+    background: $WIGHT;
+    box-shadow: 0px 1px 4px 0px rgba(30, 30, 30, 0.10);
+}
+
+.profile-header-info {
+    display: inline-flex;
+}
+
+.profile-header-img {
+    width: 90px;
+    height: 90px;
+    margin: 10px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-header-info-data {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.profile-header-info-data-name {
+    margin-bottom: 6px;
+    @include fonts ($BLACK, 16px, 20px);
+}
+
+.profile-header-info-data-age {
+    margin: 0;
+    @include fonts ($BLACK, 12px, normal);
+}
+
+.actions-button {
+    width: 34px;
+    height: 34px;
+    border: none;
+    background-color: $WIGHT;
+}
+
+
+//navigation
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 26px;
+    padding: 10px;
+}
+
+.navigation > ul {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0;
+}
+
+.navigation-item {
+    @include fonts ($GRAY, 14px, 20px);
+}
+
+.navigation-item-active {
+    @include fonts ($BLUE, 14px, 20px);
+}
+
+.navigation-line {
+    display: inline-flex;
+    width: 1px;
+    height: 18px;
+    margin-left: 20px;
+    margin-top: -2px;
+}
+
+.navigation-button-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.navigation-btn-name {
+    margin-right: 10px;
+    @include fonts ($GRAY, 14px, normal);
+}
+
+.navigation-button {
+    @include button-style;
+}
+
+.navigation-button + img {
+    
+}
+
+//content 
+
+.content-area {
+    width: 100%;
+    height: 784px;
+    border-radius: 4px;
+    background: $WIGHT;
+    box-shadow: 0px 1px 4px 0px rgba(30, 30, 30, 0.10);
+}
+
+//Dropdown
+
+.dropdown {
+    width: 230px;
+    height: 88px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    filter: drop-shadow(0px 2px 16px rgba(34, 34, 34, 0.16));
+    background-color: $WIGHT;
+    border: 1px solid $BACKGROUND_GRAY;
+    border-radius: 7px;
+    position: absolute;
+    top: 20px;
+    right: 25px;
+}
+
+.dropdown-edit, .dropdown-delete {
+    width: 100%;
+    height: 36px;
+    background: $WIGHT;
+    border: none;
+    text-align: left;
+    padding: 10px 15px;
+    @include fonts($BLACK, 14px, 16.71px);
+
+    & :hover {
+        background-color: $GRAY;
+        animation: $dissolve-animation;
+    }
+}
+
+.dropdown-btn_active {
+    background-color: $BACKGROUND_GRAY;
+}
+
+.remote-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    width: 230px;
+}

@@ -1,0 +1,189 @@
+@import '../../assets/stylesheets/mixins.scss';
+@import '../../assets/stylesheets/constants.scss';
+
+
+.left-column {
+    width: 366px;
+    margin-right: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.patients-list {
+    width: 100%;
+    flex-direction: column;
+}
+
+.slot {
+    width: 100%;
+    height: 60px;
+    flex-shrink: 0;
+    background-color: $WIGHT;
+    box-shadow: 0px 1px 4px 0px rgba(19, 19, 19, 0.10);
+    transition: opacity 300ms ease-out;
+    border-radius: 4px;
+    margin-bottom: 10px;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.search-field {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.search-field-container {
+    position: relative;
+    display: inline-block;
+    height: 40px;
+   width: 298px;
+}
+
+.search-field-input  {
+    flex-shrink: 0;
+    padding: 10px 10px 10px 50px;
+    border: none;
+    margin-left: 10px;
+    outline: none;
+} 
+
+.search-field-input:focus {
+    border: $GRAY 1px solid;
+    border-radius: 35px;
+    filter: drop-shadow(0px 1px 4px rgba(30, 30, 30, 0.10));
+}
+
+.search-field-search-btn {
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    transform: translateY(-50%);
+    @include button-style;
+    animation: $dissolve-animation;
+}
+
+.active {
+    background-color: $WIGHT;
+    border: none;
+}
+
+.search-field-btns {
+    display: flex;
+    padding-right: 10px;
+}
+.search-field-filtre-btn {
+    margin-right: 10px;
+    @include button-style;
+}
+
+ .search-field-add-btn {
+    @include button-style;
+}
+
+.search-field-close-btn {
+    transform: rotate(135deg);
+    padding: 0;
+    @include button-style;
+}
+
+.wrapper {
+    width: 100%;
+    height: 20px;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wrapper-actions {
+    display: flex;
+}
+
+.wrapper > div, .wrapper > div > label {
+    display: flex;
+    align-items: center;
+}
+
+.patients-list-action {
+    @include fonts ($GRAY, 14px, 20px);
+    padding-left: 15px;
+    text-align: right;
+    animation: $dissolve-animation;
+}
+ 
+.patients-counter {
+    width: 28px;
+    height: 18px;
+    padding: 3px;
+    margin: 10px;
+    background-color: $BLUE;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    font-feature-settings: 'clig' off, 'liga' off;
+    @include fonts ($WIGHT, 12px, 14px);
+}
+
+.patients-counter > p {
+    padding: 3px 0;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.total {
+    background-color: $GRAY; 
+}
+
+//Slot
+.patient-slot {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.patient-slot-checkbox {
+    width: 0;
+    height: 0;
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+
+.patient-slot-custom-checkbox {
+    display: inline-flex;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin: 10px;
+    border: 1px solid #CDCDCD;
+    border-radius: 4px;
+    background: $WIGHT;
+  }
+  
+  .patient-slot-checkbox:checked + .patient-slot-custom-checkbox {
+    box-sizing: border-box;
+    padding: 4px;
+    background-color: $BLUE;
+    border: 1px solid $BLUE;
+  }
+
+.patient-slot-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    background-color: $BACKGROUND_GRAY;
+    margin: 10px;
+}
+
+.patient-slot-name {
+    @include fonts ($BLACK, 16px, 20px);
+}
+
+.patient-slot-icon {
+    margin-left: auto;
+    margin-right: 20px;
+}
