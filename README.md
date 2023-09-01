@@ -1,3 +1,5 @@
+###Doctor's account layout with search, checkboxes, sort and several tabs on patient's page.
+
 <h3>To start the project:</h3><br>
 1. Clone the project<br>
 2. Run `npm install`<br>
