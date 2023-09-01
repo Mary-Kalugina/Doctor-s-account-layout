@@ -31,7 +31,7 @@ const Notes: React.FC<NotesProps> = ({ notes }) => {
                             <div className="note-text"><div className="note-time">{obj.time}</div>{obj.text}</div>
                             <Remote dropdown={dropdownStates[index]} dropController={() => toggleDropdown(index)} />
                         </div>
-                        <img className="note-img" src={obj.img} alt="" />
+                        {obj.img ? <img className="note-img" src={obj.img} alt="" /> : ''}
                     </div>
                 </li>
             ))}

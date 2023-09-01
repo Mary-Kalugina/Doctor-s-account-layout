@@ -5,13 +5,15 @@ import { Patient } from '../../interface/patient';
 
 interface PatientsListProps {
     patients: Patient[];
-}
+    account: Patient;
+    setAccount: (patient: Patient) => void;}
 
-const PatientsList: React.FC<PatientsListProps> = ({ patients }) => {
+const PatientsList: React.FC<PatientsListProps> = ({ patients, account, setAccount }) => {
 
-    const [choice, setChoice] = useState(false);
+    const [choice, setChoice] = useState<boolean>(false);
     const [chosenPatients, setChosenPatients] = useState<Patient[]>([]);
-    const [all, setAll] = useState(false);
+    const [all, setAll] = useState<boolean>(false);
+    const [active, setActive] = useState<number | null>(null);
 
     const handleCheckboxChange = (event: ChangeEvent<HTMLInputElement>) => {
         if (event.target.checked) {
@@ -40,6 +42,11 @@ const PatientsList: React.FC<PatientsListProps> = ({ patients }) => {
         setChosenPatients([]);
         setAll(false);
     };
+
+    const addBorder = (index: number) => {
+       setActive(index);
+       setAccount(patients[index]);
+    }
 
     return (
         <div className="patients-list">
@@ -73,7 +80,7 @@ const PatientsList: React.FC<PatientsListProps> = ({ patients }) => {
             </div>
             <ul>
                 {patients?.map((patient, index: number) => (
-                   <li key={index}>
+                   <li key={index} onClick={() => addBorder(index)}>
                     <PatientSlot 
                         img={patient.img} 
                         name={patient.name}
@@ -81,6 +88,7 @@ const PatientsList: React.FC<PatientsListProps> = ({ patients }) => {
                         isCheckbox={choice}
                         isChecked={chosenPatients.includes(patient)}
                         onChange={() => handlePatientCheckboxChange(index)}
+                        border={active === index || patients[index] === account}
                     />
                    </li>
                 ))}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 interface PatientProps {
     img: string;
@@ -7,12 +7,13 @@ interface PatientProps {
     isCheckbox: boolean;
     isChecked: boolean;
     onChange: () => void;
+    border: boolean;
 }
 
-const PatientSlot: React.FC<PatientProps> = ({ img, name, icon, isCheckbox, isChecked, onChange }) => {
+const PatientSlot: React.FC<PatientProps> = ({ img, name, icon, isCheckbox, isChecked, onChange, border }) => {
 
     return (                  
-        <div className="patient-slot slot">
+        <div className="patient-slot slot" style={border ? {backgroundColor: '#F1F2F3'} : {}}>
             {isCheckbox ? (
                 <label>
                     <input
